@@ -1,0 +1,45 @@
+{
+	"numberOfFrameworks": 5,
+	"frameworkDetails": [
+		{
+			"frameworkId": 12,
+			"frameworkName": "Django",
+			"frameworkDescription": "This module is a very good module lmao",
+			"numberOfModules": 5,
+			"modules": ["Module 1", "Module 2", "Module 3", "Module 4", "Module 5"],
+
+		},
+		{
+			"frameworkId": 13,
+			"frameworkName": "Django",
+			"frameworkDescription": "This module is a very good module lmao",
+			"numberOfModules": 5,
+			"modules": ["Module 1", "Module 2", "Module 3", "Module 4", "Module 5"],
+
+		},
+		{
+			"frameworkId": 14,
+			"frameworkName": "Django",
+			"frameworkDescription": "This module is a very good module lmao",
+			"numberOfModules": 5,
+			"modules": ["Module 1", "Module 2", "Module 3", "Module 4", "Module 5"],
+
+		},
+		{
+			"frameworkId": 15,
+			"frameworkName": "Django",
+			"frameworkDescription": "This module is a very good module lmao",
+			"numberOfModules": 5,
+			"modules": ["Module 1", "Module 2", "Module 3", "Module 4", "Module 5"],
+
+		},
+		{
+			"frameworkId": 17,
+			"frameworkName": "Django",
+			"frameworkDescription": "This module is a very good module lmao",
+			"numberOfModules": 5,
+			"modules": ["Module 1", "Module 2", "Module 3", "Module 4", "Module 5"],
+
+		}
+	]
+}

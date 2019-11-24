@@ -1,0 +1,27 @@
+<div class="card color-dark width h-100" *ngIf='framework'>
+    <img class="card-img-top" src="../../../../assets/logos/{{ framework.frameworkName.toLowerCase() }}.png"
+        alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title text-success h1">{{ framework.frameworkName}}</h5>
+        <p class="card-text">{{ framework.frameworkDescription }}</p>
+        <p class="card-text"><span class="text-success">Modules</span><br /> {{ framework.modules }}</p>
+        <div *ngIf='!loadingClicked else loading'>
+            <button class="btn btn-block btn-outline-light"
+                (click)='navigateToModules(framework.frameworkId, framework.frameworkName)'>{{ hasSignedUp == true ? 'CONTINUE' : 'GET STARTED'}}</button>
+        </div>
+        <ng-template #loading>
+            <div *ngIf='!initFramework else initDone'>
+                <p class="text-info">Setting Up framework for the first time..</p>
+            </div>
+            <ng-template #initDone>
+                <div *ngIf='!error else errorMsg'>
+                    <button class="btn btn-block btn-outline-light" (click)='moveToModules()'>Continue to
+                        Framework</button>
+                </div>
+                <ng-template #errorMsg>
+                    <button class="btn btn-block btn-outline-danger" (click)='tryAgain()'>Try Again</button>
+                </ng-template>
+            </ng-template>
+        </ng-template>
+    </div>
+</div>

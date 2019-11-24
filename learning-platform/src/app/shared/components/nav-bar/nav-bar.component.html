@@ -1,0 +1,24 @@
+<nav class="navbar color-dark-secondary">
+    <div class="float-left">
+        <a class="navbar-brand text-light" href="#">
+            <img src="../../../../assets/logo.png" width="45" height="45" class="d-inline-block align-center" alt="">
+            Home
+        </a>
+        <a class="navbar-brand text-light" href='/frameworks'>
+            Frameworks
+        </a>
+    </div>
+    <div class="float-right" *ngIf="!loggedIn; else userLoggedIn">
+        <a href="/login"><button class="btn btn-outline-light mr-2">LOGIN</button></a>
+    </div>
+    <ng-template #userLoggedIn>
+        <div class="row float-right">
+            <div class="col">
+                <p class="text-light align-middle">{{ loggedInUser.fullName }}</p>
+            </div>
+            <div class="col ">
+                <button class="btn btn-outline-light align-middle" (click)='logout()'>LOGOUT</button>
+            </div>
+        </div>
+    </ng-template>
+</nav>

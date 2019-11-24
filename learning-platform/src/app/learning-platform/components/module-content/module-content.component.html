@@ -1,0 +1,33 @@
+<app-nav-bar></app-nav-bar>
+<mat-toolbar>
+    <mat-toolbar-row class="h1 color-dark m-0">{{ frameworkName }}<span>&nbsp;>&nbsp;</span>{{ moduleHeading }}
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<body class="color-dark-secondary">
+    <div class="container-fluid">
+        <div class="col-lg-10">
+            <div *ngFor='let row of data' class="col border border-white mb-5">
+                <div *ngFor='let col_data of row; let i = index' class="row-lg-10">
+                    <div class="row p-2" *ngIf='i <=0'>
+                        <p class="h1 text-success">{{ col_data }}</p>
+                    </div>
+                    <hr class="border" *ngIf='i > 0' />
+                    <div class="row p-2" *ngIf='i > 0'>
+                        <p class="h4" [innerHTML]=col_data></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10 ml-4">
+            <button class="btn btn-block btn-outline-success" (click)='navigateToFrameworkModules()'>View Other Modules</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9 ml-4">
+            <p class="h1"></p>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,14 @@
+<app-nav-bar></app-nav-bar>
+<mat-toolbar>
+    <mat-toolbar-row class="h1 color-dark m-0">FRAMEWORKS</mat-toolbar-row>
+</mat-toolbar>
+
+<body class="background-dark">
+    <div *ngIf="frameworks" class="container-fluid mt-4 ml-4">
+        <div class="row mt-2" *ngFor='let row of frameworks'>
+            <div class="col-3" *ngFor='let framework of row'>
+                <app-framework-card [framework]=framework></app-framework-card>
+            </div>
+        </div>
+    </div>
+</body>

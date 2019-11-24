@@ -1,0 +1,216 @@
+expressjsonstring = r"""{
+  "frameworkId": 15,
+  "numberOfModules": 5,
+  "modules": [
+    {
+      "moduleName": "ExpressJS - Home",
+      "moduleTopic": [
+        "ExpressJS Tutorial",
+        "Audience",
+        "Prerequisites"
+      ],
+      "moduleContent": [
+        [
+          "ExpressJS Tutorial",
+          "Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications. It is an open source framework developed and maintained by the Node.js foundation."
+        ],
+        [
+          "Audience",
+          "This tutorial has been created for anyone who has a basic knowledge of HTML, Javascript and how client-servers work. After completing this tutorial, you will be able to build moderately complex websites and back-ends for you mobile applications."
+        ],
+        [
+          "Prerequisites",
+          "You should have basic knowledge of Javascript and HTML. If you are not acquainted with these, we suggest you to go through tutorials on those areas first. It will definitely help, if you have some exposure to HTTP, although it is not mandatory. Having a basic knowledge of MongoDB will help you with the Database chapter."
+        ]
+      ]
+    },
+    {
+      "moduleName": "ExpressJS - Overview",
+      "moduleTopic": [
+        "ExpressJS is a web application framework that provides you with a simple API to build websites, web apps and back ends. With ExpressJS, you need not worry about low level protocols, processes, etc.",
+        "What is Express?",
+        "Why Express?",
+        "Pug",
+        "MongoDB and Mongoose"
+      ],
+      "moduleContent": [
+        [
+          "ExpressJS is a web application framework that provides you with a simple API to build websites, web apps and back ends. With ExpressJS, you need not worry about low level protocols, processes, etc.",
+          ""
+        ],
+        [
+          "What is Express?",
+          "Express provides a minimal interface to build our applications. It provides us the tools that are required to build our app. It is flexible as there are numerous modules available on npm, which can be directly plugged into Express."
+        ],
+        [
+          "Why Express?",
+          "Unlike its competitors like Rails and Django, which have an opinionated way of building applications, Express has no \"best way\" to do something. It is very flexible and pluggable."
+        ],
+        [
+          "Pug",
+          "Pug (earlier known as Jade) is a terse language for writing HTML templates. It −Produces HTML,Supports dynamic code,Supports reusability (DRY),"
+        ],
+        [
+          "MongoDB and Mongoose",
+          "MongoDB is an open-source, document database designed for ease of development and scaling. This database is also used to store data.Mongoose is a client API for node.js which makes it easy to access our database from our Express application."
+        ]
+      ]
+    },
+    {
+      "moduleName": "ExpressJS - Environment",
+      "moduleTopic": [
+        "In this chapter, we will learn how to start developing and using the Express Framework. To start with, you should have the Node and the npm (node package manager) installed. If you don’t already have these, go to the Node setup to install node on your local system. Confirm that node and npm are installed by running the following commands in your terminal.",
+        "You should get an output similar to the following.",
+        "Node Package Manager(npm)",
+        "How to use npm?",
+        "There are two ways to install a package using npm: globally and locally.",
+        "Whenever we create a project using npm, we need to provide a package.json file, which has all the details about our project. npm makes it easy for us to set up this file. Let us set up our development project.",
+        "Step 2 − Now to create the package.json file using npm, use the following code.",
+        "Step 3 − Now we have our package.json file set up, we will further install Express. To install Express and add it to our package.json file, use the following command −",
+        "To confirm that Express has installed correctly, run the following code.",
+        "This is all we need to start development using the Express framework. To make our development process a lot easier, we will install a tool from npm, nodemon. This tool restarts our server as soon as we make a change in any of our files, otherwise we need to restart the server manually after each file modification. To install nodemon, use the following command −"
+      ],
+      "moduleContent": [
+        [
+          "In this chapter, we will learn how to start developing and using the Express Framework. To start with, you should have the Node and the npm (node package manager) installed. If you don’t already have these, go to the Node setup to install node on your local system. Confirm that node and npm are installed by running the following commands in your terminal.",
+          "node --version\nnpm --version\n"
+        ],
+        [
+          "You should get an output similar to the following.",
+          "v5.0.0\n3.5.2\n"
+        ],
+        [
+          "Node Package Manager(npm)",
+          "npm is the package manager for node. The npm Registry is a public collection of packages of open-source code for Node.js, front-end web apps, mobile apps, robots, routers, and countless other needs of the JavaScript community. npm allows us to access all these packages and install them locally. You can browse through the list of packages available on npm at npmJS."
+        ],
+        [
+          "How to use npm?",
+          ""
+        ],
+        [
+          "There are two ways to install a package using npm: globally and locally.",
+          "npm install -g <package-name>npm install <package-name>"
+        ],
+        [
+          "Whenever we create a project using npm, we need to provide a package.json file, which has all the details about our project. npm makes it easy for us to set up this file. Let us set up our development project.",
+          "Step 1 − Start your terminal/cmd, create a new folder named hello-world and cd (create directory) into it −"
+        ],
+        [
+          "Step 2 − Now to create the package.json file using npm, use the following code.",
+          "npm init"
+        ],
+        [
+          "Step 3 − Now we have our package.json file set up, we will further install Express. To install Express and add it to our package.json file, use the following command −",
+          "npm install --save express"
+        ],
+        [
+          "To confirm that Express has installed correctly, run the following code.",
+          "ls node_modules #(dir node_modules for windows)"
+        ],
+        [
+          "This is all we need to start development using the Express framework. To make our development process a lot easier, we will install a tool from npm, nodemon. This tool restarts our server as soon as we make a change in any of our files, otherwise we need to restart the server manually after each file modification. To install nodemon, use the following command −",
+          "npm install -g nodemon"
+        ]
+      ]
+    },
+    {
+      "moduleName": "ExpressJS - Hello World",
+      "moduleTopic": [
+        "We have set up the development, now it is time to start developing our first app using Express. Create a new file called index.js and type the following in it.",
+        "Save the file, go to your terminal and type the following.",
+        "How the App Works?",
+        "app.get(route, callback)",
+        "res.send()",
+        "app.listen(port, [host], [backlog], [callback]])"
+      ],
+      "moduleContent": [
+        [
+          "We have set up the development, now it is time to start developing our first app using Express. Create a new file called index.js and type the following in it.",
+          "var express = require('express');\nvar app = express();\n\napp.get('/', function(req, res){\n   res.send(\"Hello world!\");\n});\n\napp.listen(3000);"
+        ],
+        [
+          "Save the file, go to your terminal and type the following.",
+          "nodemon index.js"
+        ],
+        [
+          "How the App Works?",
+          "The first line imports Express in our file, we have access to it through the variable Express. We use it to create an application and assign it to var app."
+        ],
+        [
+          "app.get(route, callback)",
+          "This function tells what to do when a get request at the given route is called. The callback function has 2 parameters, request(req) and response(res). The request object(req) represents the HTTP request and has properties for the request query string, parameters, body, HTTP headers, etc. Similarly, the response object represents the HTTP response that the Express app sends when it receives an HTTP request."
+        ],
+        [
+          "res.send()",
+          "This function takes an object as input and it sends this to the requesting client. Here we are sending the string \"Hello World!\"."
+        ],
+        [
+          "app.listen(port, [host], [backlog], [callback]])",
+          "This function binds and listens for connections on the specified host and port. Port is the only required parameter here."
+        ]
+      ]
+    },
+    {
+      "moduleName": "ExpressJS - Routing",
+      "moduleTopic": [
+        "Web frameworks provide resources such as HTML pages, scripts, images, etc. at different routes.",
+        "app.method(path, handler)",
+        "Handler is a callback function that executes when a matching request type is found on the relevant route. For example,",
+        "If we run our application and go to localhost:3000/hello, the server receives a get request at route \"/hello\", our Express app executes the callback function attached to this route and sends \"Hello World!\" as the response.",
+        "We can also have multiple different methods at the same route. For example,",
+        "To test this request, open up your terminal and use cURL to execute the following request −",
+        "A special method, all, is provided by Express to handle all types of http methods at a particular route using the same function. To use this method, try the following.",
+        "Routers",
+        "Defining routes like above is very tedious to maintain. To separate the routes from our main index.js file, we will use Express.Router. Create a new file called things.js and type the following in it.",
+        "Now to use this router in our index.js, type in the following before the app.listen function call.",
+        "The app.use function call on route '/things' attaches the things router with this route. Now whatever requests our app gets at the '/things', will be handled by our things.js router. The '/' route in things.js is actually a subroute of '/things'. Visit localhost:3000/things/ and you will see the following output."
+      ],
+      "moduleContent": [
+        [
+          "Web frameworks provide resources such as HTML pages, scripts, images, etc. at different routes.",
+          ""
+        ],
+        [
+          "app.method(path, handler)",
+          "This METHOD can be applied to any one of the HTTP verbs – get, set, put, delete. An alternate method also exists, which executes independent of the request type.Path is the route at which the request will run."
+        ],
+        [
+          "Handler is a callback function that executes when a matching request type is found on the relevant route. For example,",
+          "var express = require('express');\nvar app = express();\n\napp.get('/hello', function(req, res){\n   res.send(\"Hello World!\");\n});\n\napp.listen(3000);"
+        ],
+        [
+          "If we run our application and go to localhost:3000/hello, the server receives a get request at route \"/hello\", our Express app executes the callback function attached to this route and sends \"Hello World!\" as the response.",
+          ""
+        ],
+        [
+          "We can also have multiple different methods at the same route. For example,",
+          "var express = require('express');\nvar app = express();\n\napp.get('/hello', function(req, res){\n   res.send(\"Hello World!\");\n});\n\napp.post('/hello', function(req, res){\n   res.send(\"You just called the post method at '/hello'!\\n\");\n});\n\napp.listen(3000);"
+        ],
+        [
+          "To test this request, open up your terminal and use cURL to execute the following request −",
+          "curl -X POST \"http://localhost:3000/hello\""
+        ],
+        [
+          "A special method, all, is provided by Express to handle all types of http methods at a particular route using the same function. To use this method, try the following.",
+          "app.all('/test', function(req, res){\n   res.send(\"HTTP method doesn't have any effect on this route!\");\n});"
+        ],
+        [
+          "Routers",
+          ""
+        ],
+        [
+          "Defining routes like above is very tedious to maintain. To separate the routes from our main index.js file, we will use Express.Router. Create a new file called things.js and type the following in it.",
+          "var express = require('express');\nvar router = express.Router();\n\nrouter.get('/', function(req, res){\n   res.send('GET route on things.');\n});\nrouter.post('/', function(req, res){\n   res.send('POST route on things.');\n});\n\n//export this router to use in our index.js\nmodule.exports = router;"
+        ],
+        [
+          "Now to use this router in our index.js, type in the following before the app.listen function call.",
+          "var express = require('Express');\nvar app = express();\n\nvar things = require('./things.js');\n\n//both index.js and things.js should be in same directory\napp.use('/things', things);\n\napp.listen(3000);"
+        ],
+        [
+          "The app.use function call on route '/things' attaches the things router with this route. Now whatever requests our app gets at the '/things', will be handled by our things.js router. The '/' route in things.js is actually a subroute of '/things'. Visit localhost:3000/things/ and you will see the following output.",
+          "Routers are very helpful in separating concerns and keep relevant portions of our code together. They help in building maintainable code. You should define your routes relating to an entity in a single file and include it using the above method in your index.js file."
+        ]
+      ]
+    }
+  ]
+}"""

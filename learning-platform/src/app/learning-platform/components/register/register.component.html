@@ -1,0 +1,67 @@
+<mat-toolbar class="color-dark op-8">
+    <span>LEARNING PLATFORM</span>
+</mat-toolbar>
+
+<body>
+    <div class="main-register-box">
+        <div class="register-box-div">
+            <div class="register-box-head">
+                <div class="register-box-heading">
+                    <p class="register-heading">Learning Platform</p>
+                </div>
+                <div class="register-box-secondary">
+                    <p class="font-weight-normal register-text">
+                        Sign up to open yourself to a whole new world of learning
+                    </p>
+                </div>
+                <div class="separator">
+                    <div class="separator-line"></div>
+                    <div class="separator-line"></div>
+                </div>
+            </div>
+            <div class="register-box-form">
+                <form [formGroup]='registrationForm'>
+                    <div class="form-group">
+                        <input type="email" class="input-dark color-dark form-control"
+                            [class.is-invalid]="userEmail.invalid && userEmail.touched" placeholder="Email"
+                            formControlName='email'>
+                        <small class="form-text text-light">We'll never share your email with anyone else.</small>
+                        <div *ngIf="userEmail.invalid && userEmail.touched">
+                            <small class='text-danger' *ngIf="userEmail.errors?.email">Please enter a valid
+                                email</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="input-dark color-dark form-control" placeholder="Full Name"
+                            [class.is-invalid]="fullName.invalid && fullName.touched" formControlName='fullName'>
+                        <small class="text-danger" *ngIf='fullName.errors?.required && fullName.touched'>Please enter
+                            your name</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="input-dark color-dark form-control" placeholder="Password"
+                            formControlName='password'>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="input-dark color-dark form-control"
+                            placeholder="Confirm Password" formControlName='confirmPassword'>
+                    </div>
+                    <p class="text-danger mismatch-text"
+                        [ngClass]="{ 'visible': registrationForm.errors?.misMatch, 'invisible': !registrationForm.errors?.misMatch }">
+                        Passwords do not match</p>
+                    <div *ngIf="!error">
+                        <p class='text-danger invisible'>Email or Password is Wrong.</p>
+                    </div>
+                    <div *ngIf="error">
+                        <p class='text-danger font-weight-bold'>Registration Failed Try Again.</p>
+                    </div>
+                    <button class="btn btn-outline-light btn-block" type="submit" [disabled]="!registrationForm.valid"
+                        (click)='onSubmit()'>Sign up</button>
+                </form>
+            </div>
+        </div>
+        <div class="sign-up-link-box">
+            <span class="text-light">Already a member?&nbsp;</span><a href='/login' class='sign-up-link text-light'>Log
+                in</a>
+        </div>
+    </div>
+</body>

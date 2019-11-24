@@ -1,0 +1,52 @@
+{
+	"frameworkId": 12,
+	"numberOfModules": 5,
+	"modules": [
+		{
+			"moduleName": "Some Module Name",
+			"moduleTopics": ["Topic 1", "Topic 2", "Topic 3"],
+			"moduleContent": [
+				["text1", "text2"],
+				["text3", "text4"],
+				["text6", "text6"],
+				["text8", "text9"]
+			]
+		},
+		{
+			"moduleName": "Some Module Name",
+			"moduleContent": [
+				["text1", "text2"],
+				["text3", "text4"],
+				["text6", "text6"],
+				["text8", "text9"]
+			]
+		},
+		{
+			"moduleName": "Some Module Name",
+			"moduleContent": [
+				["text1", "text2"],
+				["text3", "text4"],
+				["text6", "text6"],
+				["text8", "text9"]
+			]
+		},
+		{
+			"moduleName": "Some Module Name",
+			"moduleContent": [
+				["text1", "text2"],
+				["text3", "text4"],
+				["text6", "text6"],
+				["text8", "text9"]
+			]
+		},
+		{
+			"moduleName": "Some Module Name",
+			"moduleContent": [
+				["text1", "text2"],
+				["text3", "text4"],
+				["text6", "text6"],
+				["text8", "text9"]
+			]
+		}
+	]
+}

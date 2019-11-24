@@ -1,0 +1,50 @@
+body {
+    height: 93.6vh;
+    background-image: url('../../../../assets/back.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.box-div {
+    height: 45%;
+    width: 20%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    position: absolute;
+}
+.login-form-div {
+    background-color: black;
+    opacity: 0.8;
+    border-radius: 3%;
+    height: 70%;
+    width: 100%;
+}
+.login-box-head {
+    text-align: center;
+    padding-top: 10%;
+}
+.login-box-login {
+    margin-left: 5%;
+}
+.form-control {
+    width: 90%;
+}
+.btn-block {
+    width: 90%;
+}
+.register-link-box {
+    background-color: black;
+    opacity: 0.8;
+    border-radius: 3%;
+    width: 100%;
+    display: flex;
+    margin-top: 1%;
+    height: 10%;
+    justify-content: center; 
+    align-items: center;
+}
+.register-link {
+    text-decoration-line: none;
+}
+.homelink{
+    color:bisque;
+}

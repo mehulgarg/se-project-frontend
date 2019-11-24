@@ -1,0 +1,71 @@
+<app-nav-bar></app-nav-bar>
+<mat-toolbar>
+    <mat-toolbar-row class="h1 color-dark m-0">{{ frameworkName }}</mat-toolbar-row>
+</mat-toolbar>
+
+<body class="color-dark-secondary">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-12" *ngFor='let module of individualModules; index as i'>
+                        <app-module-card [module]=module [moduleNumber]=i class="m-4" [frameworkName]=frameworkName></app-module-card>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-4">
+                <div class="col-lg-11 border border-white">
+                    <div class="row p-2">
+                        <p class="h2">Workspace</p>
+                    </div>
+                    <div class="row pb-2">
+                        <div class="col-lg-12" *ngIf='textEditorButton else tryAgainTextEditor'>
+                            <div *ngIf='passwordTextEditorSuccess'>
+                                <p>Use this password to login to the Text Editor:&nbsp;<span class="font-weight-bold">{{ passwordTextEditor }}</span></p>
+                            </div>
+                            <button class="btn btn-block btn-outline-success" (click)='startTextEditor()'>{{ successTextEditor == true ? 'Open Text Editor Window' : 'Start Text Editor'}}</button>
+                            <button class="btn btn-block btn-outline-success" (click)='stopTextEditor()' *ngIf='successTextEditor'>Stop Text Editor</button>
+                        </div>
+                        <ng-template #tryAgainTextEditor>
+                            <div class="col-lg-12">
+                                <button class="btn btn-block btn-outline-danger" (click)='startTextEditor()'>Try Again</button>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="row p-2" *ngIf='startTextEditorClicked'>
+                        <p class="text-light text-muted font-italic">Loading the text editor it could take several seconds
+                            to start.</p>
+                    </div>
+                    <div class="row p-2" *ngIf='successTextEditor'>
+                            <p class="text-light font-italic">Text Editor started click to view open instance</p>
+                    </div>
+                </div>
+                <div class="col-lg-11 border border-white mt-4">
+                    <div class="row p-2">
+                        <p class="h2">Deployment Server</p>
+                    </div>
+                    <div class="row pb-2">
+                        <div class="col-lg-12" *ngIf='deploymentServerButton else tryAgainDeploymentServer'>
+                            <button class="btn btn-block btn-outline-success" (click)='startDeploymentServer()'>{{ successDeploymentServer == true ? 'Open Deployment Server instance' : 'Start Deployment Server'}}</button>
+                            <button class="btn btn-block btn-outline-success" (click)='stopDeploymentServer()' *ngIf='successDeploymentServer'>Stop Deployment Server</button>
+                        </div>
+                        <ng-template #tryAgainDeploymentServer>
+                            <div class="col-lg-12">
+                                <button class="btn btn-block btn-outline-danger" (click)='startDeploymentServer()'>Try Again</button>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="row p-2" *ngIf='startDeploymentServerClicked'>
+                        <p class="text-light text-muted font-italic">Starting the deployment server this could take a few seconds to a few minutes depending on your internet connection
+                            to start.</p>
+                    </div>
+                    <div class="row p-2" *ngIf='successDeploymentServer'>
+                            <p class="text-light font-italic">Deployment Server started click to start view instance</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <button class="btn btn-block btn-primary" (click)='testTextEditor()'>Start Text Editor</button> -->
+    <!-- <button class="btn btn-block btn-primary" (click)='testDeploymentServer()'>Start Deployment Server</button> -->
+</body>
